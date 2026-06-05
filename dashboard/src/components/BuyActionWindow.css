@@ -1,0 +1,291 @@
+/* Buy Action Window Overlay */
+.buy-action-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+  backdrop-filter: blur(2px);
+}
+
+/* Buy Action Window */
+.buy-action-window {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow: auto;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header */
+.buy-action-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.buy-action-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  color: #666;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.close-btn:hover {
+  background: #f0f0f0;
+}
+
+/* Content */
+.buy-action-content {
+  padding: 20px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.input-group input:focus {
+  border-color: #1976d2;
+}
+
+.margin-info {
+  font-size: 0.9rem;
+  color: #666;
+  padding: 12px;
+  background: #f5f5f5;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* Footer */
+.buy-action-footer {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.buy-action-footer button {
+  flex: 1;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-buy {
+  background: #1976d2;
+  color: white;
+}
+
+.btn-buy:hover {
+  background: #1565c0;
+}
+
+.btn-sell {
+  background: #d32f2f;
+  color: white;
+}
+
+.btn-sell:hover {
+  background: #c62828;
+}
+
+.btn-cancel {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.btn-cancel:hover {
+  background: #d0d0d0;
+}
+
+/* ===== RESPONSIVE - MOBILE (768px and below) ===== */
+@media (max-width: 768px) {
+  .buy-action-overlay {
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .buy-action-window {
+    max-width: 75%;
+    width: 75%;
+    border-radius: 8px;
+    max-height: 60vh;
+    margin: 0;
+  }
+
+  .buy-action-header {
+    padding: 10px 12px;
+  }
+
+  .buy-action-header h3 {
+    font-size: 0.95rem;
+  }
+
+  .buy-action-content {
+    padding: 12px;
+  }
+
+  .input-group {
+    margin-bottom: 12px;
+  }
+
+  .input-group label {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+
+  .input-group input {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+
+  .margin-info {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+
+  .buy-action-footer {
+    padding: 10px 12px;
+    flex-direction: row;
+    gap: 6px;
+  }
+
+  .buy-action-footer button {
+    padding: 9px 12px;
+    font-size: 0.8rem;
+  }
+
+  .close-btn {
+    width: 26px;
+    height: 26px;
+    font-size: 1.3rem;
+  }
+}
+
+/* ===== SMALL MOBILE (480px and below) ===== */
+@media (max-width: 480px) {
+  .buy-action-overlay {
+    padding: 8px;
+  }
+
+  .buy-action-window {
+    width: 80%;
+    max-width: 80%;
+    max-height: 55vh;
+    margin: 0;
+    border-radius: 8px;
+  }
+
+  .buy-action-header {
+    padding: 8px 10px;
+  }
+
+  .buy-action-header h3 {
+    font-size: 0.9rem;
+  }
+
+  .buy-action-content {
+    padding: 10px;
+  }
+
+  .input-group {
+    margin-bottom: 10px;
+  }
+
+  .input-group label {
+    font-size: 0.75rem;
+    margin-bottom: 4px;
+  }
+
+  .input-group input {
+    padding: 7px 9px;
+    font-size: 0.8rem;
+  }
+
+  .margin-info {
+    font-size: 0.75rem;
+    padding: 7px;
+  }
+
+  .buy-action-footer {
+    padding: 8px 10px;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .buy-action-footer button {
+    padding: 9px;
+    font-size: 0.75rem;
+    width: 100%;
+  }
+
+  .close-btn {
+    width: 24px;
+    height: 24px;
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,46 @@
+.hero {
+  padding: 100px 20px;
+}
+.hero h2 {
+  color: #424242;
+  line-height: 3rem;
+}
+.about-section {
+  max-width: 900px; /* Limit width for readability */
+  margin: 0 auto; /* Center align the section */
+  text-align: left;
+  padding: 20px; /* Add padding for spacing */
+}
+
+.about-col-1,
+.about-col-2 {
+  flex: 1;
+  line-height: 2rem;
+  color: #424242;
+  /* padding: 20px; */
+}
+
+/* Ensure proper spacing for larger screens */
+@media (min-width: 1200px) {
+  .about-col-1 {
+    margin-left: 146px;
+  }
+  .about-col-2 {
+    margin-right: 146px;
+  }
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 992px) {
+  .row {
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+  }
+
+  .about-col-1,
+  .about-col-2 {
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}

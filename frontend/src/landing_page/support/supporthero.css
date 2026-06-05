@@ -1,0 +1,14 @@
+.supportSection {
+  background-color: #387ed1;
+  color: white;
+}
+
+.Support-tags a {
+  text-decoration: underline;
+  color: white;
+  padding: 0.5rem;
+}
+
+.featured-tags a {
+  color: white;
+}
