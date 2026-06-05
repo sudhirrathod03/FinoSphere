@@ -18,9 +18,9 @@ const MONGO_URL = process.env.MONGO_URL;
 app.use(
   cors({
     origin: [
-      "https://dashboard-six-kappa-11.vercel.app",
-      "https://frontend-iota-livid.vercel.app",
-      "http://localhost:5173/",
+      "http://localhost:5173", 
+      "https://fino-sphere.vercel.app",
+      "https://fino-sphere-5dc6.vercel.app"
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
@@ -68,7 +68,7 @@ app.get(
   }
 );
 
-// Start after DB Connect
+
 mongoose
   .connect(MONGO_URL)
   .then(() => {
