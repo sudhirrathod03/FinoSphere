@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import axios from "axios";
-
+import "../styles/auth.css";
 // Environment variables must be declared after imports
 const API_BASE = import.meta.env.VITE_API_URL;
 function Signup() {
@@ -35,47 +35,53 @@ function Signup() {
     }
   };
 
-  return (
-    <div style={{ padding: "20px", maxWidth: "400px", margin: "0 auto" }}>
-      <h2>Signup</h2>
-      
-      {/* Display error message if registration fails */}
-      {error && <p style={{ color: "red", fontWeight: "bold" }}>{error}</p>}
-      
-      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-        <input
-          type="text"
-          name="username"
-          placeholder="Name"
-          value={formData.username}
-          onChange={handleChange}
-          required
-          style={{ padding: "8px" }}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          style={{ padding: "8px" }}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-          required
-          style={{ padding: "8px" }}
-        />
-        <button type="submit" style={{ padding: "10px", cursor: "pointer" }}>
-          Register
-        </button>
-      </form>
-    </div>
-  );
+
+    return (
+      <div className="auth-container">
+        <div className="auth-card">
+          <h2>Create Account</h2>
+          <p className="auth-subtitle">Join FinoSphere today</p>
+    
+          {error && <p className="error-msg">{error}</p>}
+    
+          <form onSubmit={handleSubmit} className="auth-form">
+            <input
+              type="text"
+              name="username"
+              placeholder="Full Name"
+              value={formData.username}
+              onChange={handleChange}
+              required
+            />
+    
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+    
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+    
+            <button type="submit">Create Account</button>
+          </form>
+    
+          <p className="auth-link">
+            Already have an account? <Link to="/login">Login</Link>
+          </p>
+        </div>
+      </div>
+    );
+
 }
 
 export default Signup;

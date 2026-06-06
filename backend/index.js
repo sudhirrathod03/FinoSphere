@@ -3,7 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const passport = require("passport");
-
+const cookieParser = require("cookie-parser");
 const { HoldingsModel } = require("./model/HoldingsModel");
 const { PositionsModel } = require("./model/PositionsModel");
 const { OrdersModel } = require("./model/OrdersModel");
@@ -27,6 +27,9 @@ app.use(
     credentials: true,
   })
 );
+
+
+app.use(cookieParser());
 
 app.use(express.json());
 app.use(passport.initialize());

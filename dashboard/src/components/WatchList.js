@@ -10,8 +10,6 @@ import {
 import { watchlist } from "../data/data";
 import { DoughnutChart } from "./DoughnoutChart";
 import "./watchlist.css";
-console.log("watchlist =", watchlist);
-console.log("isArray =", Array.isArray(watchlist));
 
 const labels = watchlist.map((subArray) => subArray["name"]);
 

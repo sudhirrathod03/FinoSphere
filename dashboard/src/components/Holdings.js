@@ -14,11 +14,7 @@ const Holdings = () => {
     axios
       .get(`${API_BASE}/getHoldings`)
       .then((res) => {
-        console.log(res.data);
-        console.log("API DATA:", res.data);
-        console.log("IS ARRAY:", Array.isArray(res.data));
-
-        setAllHoldings(Array.isArray(res.data) ? res.data : []);
+        setAllHoldings(res.data);
         setLoading(false);
       })
       .catch((err) => {
@@ -26,9 +22,7 @@ const Holdings = () => {
         setLoading(false);
       });
   }, []);
-  console.log("allHoldings:", allHoldings);
-  console.log("isArray:", Array.isArray(allHoldings));
-  console.log("length:", allHoldings?.length);
+
   const labels = allHoldings.map((stock) => stock.name);
 
   // Create color array based on profit/loss

@@ -11,7 +11,7 @@ const Positions = () => {
   useEffect(() => {
     axios.get(`${API_BASE}/getPositions`).then((res) => {
       console.log(res.data);
-      setPositions(Array.isArray(res.data) ? res.data : []);
+      setPositions(res.data);
     });
   }, []);
   return (

@@ -18,7 +18,7 @@ const Orders = () => {
       setLoading(true);
       setError("");
       const response = await axios.get(`${API_BASE}/allOrders`);
-      setOrders(Array.isArray(response.data) ? response.data : []);
+      setOrders(response.data);
       setShowOrders(true);
     } catch (err) {
       console.error("Failed to fetch orders", err);
