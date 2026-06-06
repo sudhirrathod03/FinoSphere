@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
-// Environment variables must be declared after imports
 const API_BASE = import.meta.env.VITE_API_URL;
 
 function Login() {

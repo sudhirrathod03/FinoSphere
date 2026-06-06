@@ -4,10 +4,9 @@ import axios from "axios";
 
 // Environment variables must be declared after imports
 const API_BASE = import.meta.env.VITE_API_URL;
-
 function Signup() {
   const navigate = useNavigate();
-  const [error, setError] = useState(""); // Added state to handle UI errors
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     username: "",
     email: "",
