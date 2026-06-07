@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+
 import axios from "axios";
 import "../styles/auth.css";
 const API_BASE = import.meta.env.VITE_API_URL;
@@ -7,6 +8,7 @@ const API_BASE = import.meta.env.VITE_API_URL;
 function Login() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -22,23 +24,20 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setLoading(true);
 
     try {
-      const res = await axios.post(
-        `${API_BASE}/api/auth/login`,
-        formData,
-        { withCredentials: true }
-      );
-      
-      localStorage.setItem("token", res.data.token);
-      
-      navigate("/");
+      const res = await axios.post(`${API_BASE}/api/auth/login`, formData, {
+        withCredentials: true,
+      });
 
-      console.log(res.data);
+      localStorage.setItem("token", res.data.token);
       navigate("/");
     } catch (err) {
       console.error("Login Error:", err.response?.data || err.message);
       setError(err.response?.data?.msg || "Invalid credentials.");
+    } finally {
+      setLoading(false);
     }
   };
   return (
@@ -46,9 +45,9 @@ function Login() {
       <div className="auth-card">
         <h2>Welcome Back</h2>
         <p className="auth-subtitle">Login to your account</p>
-  
+
         {error && <p className="error-msg">{error}</p>}
-  
+
         <form onSubmit={handleSubmit} className="auth-form">
           <input
             type="email"
@@ -58,7 +57,7 @@ function Login() {
             onChange={handleChange}
             required
           />
-  
+
           <input
             type="password"
             name="password"
@@ -67,10 +66,12 @@ function Login() {
             onChange={handleChange}
             required
           />
-  
-          <button type="submit">Login</button>
+
+          <button type="submit" disabled={loading}>
+            {loading ? "Logging in..." : "Login"}
+          </button>
         </form>
-  
+
         <p className="auth-link">
           Don't have an account? <Link to="/signup">Sign Up</Link>
         </p>
