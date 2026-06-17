@@ -21,7 +21,7 @@ app.use(
       "http://localhost:5174",
       "http://localhost:5173",
       "https://fino-sphere.vercel.app",
-      "https://fino-sphere-6j98.vercel.app/",
+      "https://fino-sphere-6j98.vercel.app",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
