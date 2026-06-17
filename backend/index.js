@@ -18,7 +18,7 @@ const MONGO_URL = process.env.MONGO_URL;
 app.use(
   cors({
     origin: [
-      "http://localhost:3000",
+      "http://localhost:5174",
       "http://localhost:5173",
       "https://fino-sphere.vercel.app",
       "https://fino-sphere-5dc6.vercel.app",

@@ -4,7 +4,7 @@ import axios from "axios";
 import GeneralContext from "./GeneralContext";
 import "./BuyActionWindow.css";
 
-const API_BASE = process.env.REACT_APP_API_URL;
+const API_BASE = import.meta.env.VITE_API_URL;
 
 const BuyActionWindow = ({ uid }) => {
   const [quantity, setQuantity] = useState(1);

@@ -1,7 +1,7 @@
 import React from "react";
 
-import Dashboard from "./Dashboard";
-import TopBar from "./TopBar";
+import Dashboard from "./Dashboard.jsx";
+import TopBar from "./TopBar.jsx";
 
 const Home = () => {
   return (
