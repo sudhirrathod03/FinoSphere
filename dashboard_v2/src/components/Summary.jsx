@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../styles/summary.css"
 const Summary = () => {
   return (
     <>

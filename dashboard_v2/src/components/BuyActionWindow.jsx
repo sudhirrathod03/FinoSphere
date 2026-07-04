@@ -2,7 +2,7 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import GeneralContext from "./GeneralContext";
-import "./BuyActionWindow.css";
+import "../styles/BuyActionWindow.css";
 
 const API_BASE = import.meta.env.VITE_API_URL;
 
@@ -28,7 +28,7 @@ const BuyActionWindow = ({ uid }) => {
       const response = await axios.post(`${API_BASE}/newOrder`, orderData);
       console.log("Order placed successfully:", response.data);
       
-      // ✅ Trigger order refresh
+      // Trigger order refresh
       generalContext.refreshOrders();
       
       // Close the window after successful order
@@ -59,7 +59,7 @@ const BuyActionWindow = ({ uid }) => {
       const response = await axios.post(`${API_BASE}/newOrders`, orderData);
       console.log("Order placed successfully:", response.data);
       
-      // ✅ Trigger order refresh
+      //  Trigger order refresh
       generalContext.refreshOrders();
       
       // Close the window after successful order

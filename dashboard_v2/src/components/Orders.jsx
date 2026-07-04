@@ -2,7 +2,7 @@
 import React, { useState, useContext, useEffect, useCallback } from "react";
 import axios from "axios";
 import GeneralContext from "./GeneralContext";
-import "./order.css";
+import "../styles/order.css";
 
 const API_BASE = import.meta.env.VITE_API_URL;
 

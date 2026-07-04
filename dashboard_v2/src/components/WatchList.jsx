@@ -9,7 +9,7 @@ import {
 } from "@mui/icons-material";
 import { watchlist } from "../data/data";
 import { DoughnutChart } from "./DoughnoutChart";
-import "./watchlist.css";
+import "../styles/watchlist.css";
 
 const labels = watchlist.map((subArray) => subArray["name"]);
 

@@ -9,7 +9,7 @@ import Positions from "./Positions.jsx";
 import Summary from "./Summary.jsx";
 import WatchList from "./WatchList.jsx";
 import { GeneralContextProvider } from "./GeneralContext";
-import "./dashboard.css";
+import "../styles/dashboard.css";
 
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -53,7 +53,6 @@ const Dashboard = () => {
           <Route path="/orders" element={<Orders />} />
           <Route path="/holdings" element={<Holdings />} />
           <Route path="/positions" element={<Positions />} />
-          {/* <Route path="/funds" element={<Funds />} /> */}
           <Route path="/apps" element={<Apps />} />
         </Routes>
       </main>

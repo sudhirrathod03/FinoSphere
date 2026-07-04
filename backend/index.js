@@ -7,7 +7,7 @@ const cookieParser = require("cookie-parser");
 const { HoldingsModel } = require("./model/HoldingsModel");
 const { PositionsModel } = require("./model/PositionsModel");
 const { OrdersModel } = require("./model/OrdersModel");
-
+const axios = require('axios')
 const authRoutes = require("./routes/auth");
 require("./config/passport")(passport);
 
@@ -72,6 +72,19 @@ app.get(
   }
 );
 
+
+
+app.get("/market-news", async (req, res) => {
+  try {
+    const response = await axios.get(
+      `https://finnhub.io/api/v1/news?category=general&token=${process.env.FINNHUB_API_KEY}`
+    );
+
+    res.json(response.data.slice(0, 10));
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
 
 mongoose
   .connect(MONGO_URL)
